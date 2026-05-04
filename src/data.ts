@@ -74,10 +74,10 @@ export const NAV_ITEMS: readonly NavItem[] = [
 ];
 
 export const STATS: ReadonlyArray<{ readonly v: string; readonly l: string }> = [
-  { v: '4,720kg',     l: 'Food rescued this month across UAE' },
-  { v: 'AED 38,200',  l: 'Value recovered for stores' },
-  { v: '162',         l: 'Trades closed this week' },
-  { v: '11.4t',       l: 'CO₂ avoided · Net Zero 2050 aligned' },
+  { v: '4.7t',       l: 'Stock rescued this month' },
+  { v: 'AED 38.2k',  l: 'Recovered for stores' },
+  { v: '162',        l: 'Trades closed this week' },
+  { v: '11.4t',      l: 'CO₂ avoided' },
 ];
 
 export const productImage = (id: string, w: number = 600): string =>

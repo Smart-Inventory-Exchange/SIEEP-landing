@@ -290,6 +290,16 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   line-height: 1; letter-spacing: -0.035em;
   font-variant-numeric: tabular-nums;
 }
+.stat .v .cur {
+  font-family: var(--font-body);
+  font-size: 0.34em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  margin-right: 6px;
+  vertical-align: 0.45em;
+  text-transform: uppercase;
+}
 .stat .l {
   font-size: 11px; text-transform: uppercase;
   letter-spacing: 0.16em; color: var(--ink-3); margin-top: 12px;

@@ -13,6 +13,12 @@ npm run lint     # tsc --noEmit (no ESLint configured)
 
 There is no test framework configured. Type-checking via `tsc -b` is the only static gate.
 
+## Deployment
+
+Deploys to GitHub Pages via [.github/workflows/deploy.yml](.github/workflows/deploy.yml) on every push to `main`. The workflow runs `tsc --noEmit`, `npm run build`, and uploads `dist/` as a Pages artifact. Live URL: `https://smart-inventory-exchange.github.io/SIEEP-landing/`.
+
+[vite.config.ts](vite.config.ts) sets `base: '/SIEEP-landing/'` only when `command === 'build'` so dev still serves at `/`. If the repo is renamed, update `REPO_BASE` in `vite.config.ts` to match. `public/.nojekyll` exists to prevent GitHub Pages from running Jekyll on the build output (it would otherwise strip files starting with `_`).
+
 ## Stack
 
 Vite 5 + React 18 + TypeScript (strict, `verbatimModuleSyntax`, `noUnusedLocals/Parameters`) + framer-motion 11. No router, no state library, no CSS-in-JS — a single static marketing page.
@@ -21,7 +27,7 @@ Vite 5 + React 18 + TypeScript (strict, `verbatimModuleSyntax`, `noUnusedLocals/
 
 This is a one-page editorial landing page for **Expirium**, a UAE B2B marketplace for near-expiry wholesale inventory. The page is composed of independent section components rendered linearly inside `App.tsx`:
 
-```
+```text
 Nav → Hero (HeroCard) → TrustStrip → Stats → HowItWorks → Features → Market (ProductCard ×8) → Quote → CTA → Footer
 ```
 
